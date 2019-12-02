@@ -1,10 +1,11 @@
-The **WebGL Globe** is an open platform for geographic data visualization created by the Google Data Arts Team. We encourage you to copy the code, add your own data, and create your own globes.
+# Initial setup
 
-Check out the examples at https://experiments.withgoogle.com/chrome/globe, and if you create a globe, please [share it with us](http://www.chromeexperiments.com/submit). We post our favorite globes publicly.
+Clone the code into a local repository. 
+Navigate to the DBGlobe folder
+Run "npm i" to download all dependencies
+Run "npm start" to begin the node server
+Navigate to your browser and go to localhost:5000
 
-![](http://4.bp.blogspot.com/-nB6XnTgb4AA/TcLQ4gRBtfI/AAAAAAAAH-U/vb2GuhPN6aM/globe.png)
-
-----
 
 **The WebGL Globe** supports data in `JSON` format, a sample of which you can find [here](https://github.com/dataarts/webgl-globe/blob/master/globe/population909500.json). `webgl-globe` makes heavy use of the [Three.js library](https://github.com/mrdoob/three.js/).
 
@@ -22,8 +23,20 @@ var data = [
     ]
 ];
 ```
+# Basic socket usage
+https://socket.io/docs/emit-cheatsheet/
 
-# Basic Usage
+Emits follow a format of:
+
+Client Side
+    socket.emit('name_of_data', data);
+Server Side
+    socket.on('name_of_data', function(data) {
+        process_this_data(data);
+    });
+Us cmd F to search for socket usage in our server.mjs and /client/index.js files
+
+# Basic Usage of WebGL Globe
 
 The following code polls a `JSON` file (formatted like the one above) for geo-data and adds it to an animated, interactive WebGL globe.
 
