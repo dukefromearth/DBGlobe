@@ -1,0 +1,22 @@
+{
+  "name": "Global-Natural-Disasters",
+  "version": "1.0.0",
+  "main": "/client/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node --experimental-modules server.mjs",
+    "server": "PORT=8080 ENV=server nodemon --experimental-modules server.mjs",
+    "dev": "ENV=dev nodemon --experimental-modules server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "eslint": "^6.5.1",
+    "express": "^4.17.1",
+    "jshint": "^2.10.3",
+    "socket.io": "^2.3.0"
+  },
+  "devDependencies": {},
+  "description": ""
+}
