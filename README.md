@@ -1,11 +1,27 @@
 # Initial setup
 
-Clone the code into a local repository. 
-Navigate to the DBGlobe folder
-Run "npm i" to download all dependencies
-Run "npm start" to begin the node server
-Navigate to your browser and go to localhost:5000
+Clone the code into a local repository.  
+Navigate to the DBGlobe folder  
+Run "npm i" to download all dependencies  
+Run "npm start" to begin the node server  
+Navigate to your browser and go to localhost:5000  
 
+# Basic socket usage
+https://socket.io/docs/emit-cheatsheet/
+
+Emits follow a format of:  
+
+
+```javascript
+//client Side
+    socket.emit('name_of_data', data);
+//server Side
+    socket.on('name_of_data', function(data) {
+        process_this_data(data);
+    });
+    
+```  
+Use cmd F to search for socket usage in our server.mjs and /client/index.js files
 
 **The WebGL Globe** supports data in `JSON` format, a sample of which you can find [here](https://github.com/dataarts/webgl-globe/blob/master/globe/population909500.json). `webgl-globe` makes heavy use of the [Three.js library](https://github.com/mrdoob/three.js/).
 
@@ -23,18 +39,7 @@ var data = [
     ]
 ];
 ```
-# Basic socket usage
-https://socket.io/docs/emit-cheatsheet/
 
-Emits follow a format of:
-
-Client Side
-    socket.emit('name_of_data', data);
-Server Side
-    socket.on('name_of_data', function(data) {
-        process_this_data(data);
-    });
-Us cmd F to search for socket usage in our server.mjs and /client/index.js files
 
 # Basic Usage of WebGL Globe
 
