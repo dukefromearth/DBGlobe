@@ -23,6 +23,7 @@ if (!Detector.webgl) {
                 yy[i].setAttribute('class', 'year');
             }
             y.setAttribute('class', 'year active');
+            y.addEventListener('mouseover', socket.emit('hover', years[t]));
         };
     };
 
@@ -30,8 +31,6 @@ if (!Detector.webgl) {
         console.log(years[i]);
         var y = document.getElementById('year' + years[i]);
         y.addEventListener('mouseover', settime(globe, i), false);
-        y.addEventListener('mouseover', socket.emit('hover', years[i]));
-
     }
 
     var xhr;
