@@ -44,6 +44,7 @@ function mapify(data, d_low, d_high) {
   let d2 = new Date(d_high+"/12/31");
   for (let i in data) {
     let event = data[i];
+    console.log(event);
     let event_date = new Date(event.date);
     if (d1.getTime() < event_date && d2.getTime() > event_date) {
       rv.push({
