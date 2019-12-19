@@ -76,6 +76,11 @@ const server = http.Server(app);
 const io = socketIO(server);
 const port_num = 5000;
 
+io.on('connection', function(socket){
+  let rv = db_data["Hurricane"];
+  if (rv) socket.emit('data_packet', type, mapify(db_data["Hurricane"].data,1980,1995));
+});
+
 var sockets = {};
 
 app.set('port', port_num);
