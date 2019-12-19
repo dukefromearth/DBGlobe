@@ -9,10 +9,9 @@ import mysql from 'mysql';
 
 var con = mysql.createConnection({
   host: "localhost",
-  user: "globeclient",
-  password: "globeclient"
+  user: "jeffrey",
+  password: "password"
 });
-
 
 con.connect(function (err) {
   if (err) throw err;
